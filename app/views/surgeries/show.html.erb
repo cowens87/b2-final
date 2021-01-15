@@ -1,0 +1,15 @@
+<h1>Surgery Overview</h1>
+
+==============================
+Details
+===============================
+<section class="surgery-info">
+<li>Title:            <%= @surgery.title %></li>
+<li>Operating Room #: <%= @surgery.operating_room_number %></li>
+</section>
+=============================
+Other surgeries happening this day of the week:
+===============================
+<section class="other-surgeries">
+<li>Title: <%= Surgery.find_others_by_day.pluck(:title).to_sentence %></li>
+</section>

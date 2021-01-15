@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a visitor', type: :feature do
-  describe 'When I visit a surgerys index page' do
+  describe 'When I visit a surgerys show page' do
     before(:each) do
       # Hospitals:
       @hospital1 = Hospital.create(name: "Seattle Grace")
@@ -20,22 +20,20 @@ RSpec.describe 'As a visitor', type: :feature do
       DoctorSurgery.create!(surgery_id: @surgery2.id, doctor_id: @doctor3.id)
       DoctorSurgery.create!(surgery_id: @surgery2.id, doctor_id: @doctor4.id)
     end
-    # User Story 1
+    # User Story 2
     describe 'Surgery Index' do
-      it 'I see the title of all surgeries and the names of all doctors performing that surgery' do
+      it 'I can click on any surgery title and go to surgery’s show page and see all the surgerys details' do
         visit surgeries_path
+     
+        expect(page).to have_link(@surgery1.title)
+        
+        click_link(@surgery1.title)
 
-        within("#surgery-info-#{@surgery1.id}") do
-          expect(page).to have_content(@surgery1.title)
-          expect(page).to have_content(@doctor1.name)
-          expect(page).to have_content(@doctor2.name)
-        end 
-
-        within("#surgery-info-#{@surgery2.id}") do
-          expect(page).to have_content(@surgery2.title)
-          expect(page).to have_content(@doctor3.name)
-          expect(page).to have_content(@doctor4.name)
-        end 
+        expect(current_path).to eq(surgery_path(@surgery1))
+        expect(page).to have_content(@surgery1.title)
+        expect(page).to have_content(@surgery1.operating_room_number)
+        expect(page).to have_content('Other surgeries happening this day of the week:')
+        expect(@surgery2.title).to_not appear_before('Other surgeries happening this day of the week:')
       end
     end
   end

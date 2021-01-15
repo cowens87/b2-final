@@ -1,17 +1,63 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/hospital.rb": {
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/spec/features/surgeries/show_spec.rb": {
         "lines": [
           1,
+          null,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/application_record.rb": {
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/spec/models/doctor_spec.rb": {
         "lines": [
           1,
+          null,
           1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -24,11 +70,25 @@
           null
         ]
       },
-      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/surgery.rb": {
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/application_record.rb": {
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/spec/models/doctor_surgery_spec.rb": {
+        "lines": [
           1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -40,9 +100,61 @@
           null
         ]
       },
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/spec/models/hospital_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/hospital.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/spec/models/surgery_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/models/surgery.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/cydkyd/turing/2mod/independent_challenges/b2-final/app/controllers/surgeries_controller.rb": {
         "lines": [
           1,
+          1,
+          2,
+          null,
+          null,
           1,
           1,
           null,
@@ -56,6 +168,6 @@
         ]
       }
     },
-    "timestamp": 1610729947
+    "timestamp": 1610731720
   }
 }

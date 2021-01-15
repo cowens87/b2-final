@@ -2,7 +2,7 @@
 
 <% @surgeries.each do |surgery| %>
   <section id="surgery-info-<%=surgery.id%>">
-    <li>Title:               <%= surgery.title %></li>
+    <h3>Title:<%= link_to "#{surgery.title}", surgery_path(surgery) %></h3>
     <li>Performing Surgeons: <%= surgery.doctors.pluck(:name).to_sentence %></li><br>
   </section>
   <% end %>
