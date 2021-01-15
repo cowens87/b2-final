@@ -11,5 +11,5 @@ Details
 Other surgeries happening this day of the week:
 ===============================
 <section class="other-surgeries">
-<li>Title: <%= Surgery.find_others_by_day.pluck(:title).to_sentence %></li>
+<li>Title: <%= Surgery.find_others_by_day(@surgery.day_of_week).pluck(:title).to_sentence %></li>
 </section>

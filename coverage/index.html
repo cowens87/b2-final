@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-15T10:28:40-07:00">2021-01-15T10:28:40-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-15T10:33:53-07:00">2021-01-15T10:33:53-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.13
+         1.39
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>72</b> relevant lines,
-    <span class="green"><b>72</b> lines covered</span> and
+    <b>87</b> relevant lines,
+    <span class="green"><b>87</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -143,7 +143,7 @@
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.20</td>
             
           </tr>
         
@@ -194,11 +194,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ffdc29dbb4c98182c050df60e553fc174d16d5b3" class="src_link" title="spec/models/surgery_spec.rb">spec/models/surgery_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.33</td>
+            <td class="cell--number">2.24</td>
             
           </tr>
         
@@ -768,18 +768,18 @@
 
             
 
-            <code class="ruby">  def self.find_others_by_day</code>
+            <code class="ruby">  def self.find_others_by_day(day)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="6">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    where(day_of_week: &#39;Thursday&#39;)</code>
+            <code class="ruby">    where(day_of_week: day)</code>
           </li>
         </div>
       
@@ -1751,8 +1751,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>21</b> relevant lines.
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1803,40 +1803,40 @@
 
             
 
-            <code class="ruby">  describe &#39;relationships&#39; do</code>
+            <code class="ruby">    before(:each) do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="5">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">    it {should have_many :doctor_surgeries}</code>
+            <code class="ruby">      # Hospitals:</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="6">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="6">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    it {should have_many(:doctors).through(:doctor_surgeries)}</code>
+            <code class="ruby">      @hospital1 = Hospital.create(name: &quot;Seattle Grace&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      @hospital2 = Hospital.create(name: &quot;New York Hospital&quot;)</code>
           </li>
         </div>
       
@@ -1847,23 +1847,199 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      # Doctors:</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="3" data-linenumber="9">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @doctor1 = Doctor.create!(hospital_id: @hospital1.id, name: &quot;Meredith Grey&quot;, specialty: &quot;General Surgery&quot;, university_attended: &quot;Harvard University&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="10">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @doctor2 = Doctor.create!(hospital_id: @hospital1.id, name: &quot;Alex Karev&quot;, specialty: &quot;Pediatric Surgery&quot;, university_attended: &quot;Johns Hopkins University&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="11">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @doctor3 = Doctor.create!(hospital_id: @hospital2.id, name: &quot;Miranda Bailey&quot;, specialty: &quot;General Surgery&quot;, university_attended: &quot;Stanford University&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="12">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @doctor4 = Doctor.create!(hospital_id: @hospital2.id,name: &quot;Derek Webber&quot;, specialty: &quot;Attending Surgeon&quot;, university_attended: &quot;University of Pennsylvania&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">      # Surgeries:</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="14">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @surgery1 = Surgery.create!(title: &#39;Knee Replacement&#39;, day_of_week: &#39;Thursday&#39;, operating_room_number: 4)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="15">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @surgery2 = Surgery.create!(title: &#39;Spinal Fusion&#39;, day_of_week: &#39;Thursday&#39;, operating_room_number: 3)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">      # Doctor Surgeries: </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="17">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      DoctorSurgery.create!(surgery_id: @surgery1.id, doctor_id: @doctor1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="18">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      DoctorSurgery.create!(surgery_id: @surgery1.id, doctor_id: @doctor2.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="19">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      DoctorSurgery.create!(surgery_id: @surgery2.id, doctor_id: @doctor3.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="20">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      DoctorSurgery.create!(surgery_id: @surgery2.id, doctor_id: @doctor4.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;instance methods&#39; do</code>
+            <code class="ruby">    describe &#39;relationships&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="covered" data-hits="2" data-linenumber="24">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    it {should have_many :doctor_surgeries}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="25">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    it {should have_many(:doctors).through(:doctor_surgeries)}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -1874,7 +2050,73 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;All surgeries that happen on the same day of the week as this surgery&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;Can find title of all surgeries happening on the same day&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(Surgery.find_others_by_day(@surgery2.day_of_week).pluck(:title)).to eq([&quot;Knee Replacement&quot;, &quot;Spinal Fusion&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
