@@ -34,6 +34,7 @@ RSpec.describe 'As a visitor', type: :feature do
         expect(page).to have_content(@surgery1.operating_room_number)
         expect(page).to have_content('Other surgeries happening this day of the week:')
         expect(@surgery2.title).to_not appear_before('Other surgeries happening this day of the week:')
+        save_and_open_page
       end
     end
   end

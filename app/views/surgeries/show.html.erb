@@ -5,11 +5,11 @@ Details
 ===============================
 <section class="surgery-info">
 <li>Title:            <%= @surgery.title %></li>
-<li>Operating Room #: <%= @surgery.operating_room_number %></li>
-</section>
-=============================
+<li>Operating Room No.: <%= @surgery.operating_room_number %></li>
+</section><br>
+================
 Other surgeries happening this day of the week:
-===============================
+================
 <section class="other-surgeries">
-<li>Title: <%= Surgery.find_others_by_day(@surgery.day_of_week).pluck(:title).to_sentence %></li>
+<li>Title(s): <%= Surgery.find_others_by_day(@surgery).pluck(:title).to_sentence %></li>
 </section>

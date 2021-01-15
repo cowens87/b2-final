@@ -27,7 +27,7 @@ RSpec.describe Surgery, type: :model do
 
   describe 'All surgeries that happen on the same day of the week as this surgery' do
     it 'Can find title of all surgeries happening on the same day' do
-      expect(Surgery.find_others_by_day(@surgery2.day_of_week).pluck(:title)).to eq(["Knee Replacement", "Spinal Fusion"])
+      expect(Surgery.find_others_by_day(@surgery2).pluck(:title)).to eq(["Knee Replacement"])
     end
   end
 end

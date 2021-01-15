@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-15T10:33:53-07:00">2021-01-15T10:33:53-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-15T10:43:23-07:00">2021-01-15T10:43:23-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>87</b> relevant lines,
-    <span class="green"><b>87</b> lines covered</span> and
+    <b>88</b> relevant lines,
+    <span class="green"><b>88</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -150,9 +150,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#cc6c521e1fffdc4acdfd7ffea1496af2e0b01479" class="src_link" title="spec/features/surgeries/show_spec.rb">spec/features/surgeries/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">40</td>
-            <td class="cell--number">26</td>
-            <td class="cell--number">26</td>
+            <td class="cell--number">41</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">27</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -768,7 +768,7 @@
 
             
 
-            <code class="ruby">  def self.find_others_by_day(day)</code>
+            <code class="ruby">  def self.find_others_by_day(surg_info)</code>
           </li>
         </div>
       
@@ -779,7 +779,7 @@
 
             
 
-            <code class="ruby">    where(day_of_week: day)</code>
+            <code class="ruby">    where(day_of_week: surg_info.day_of_week).where.not(id: surg_info.id)</code>
           </li>
         </div>
       
@@ -824,8 +824,8 @@
     
 
     <div class="t-line-summary">
-      <b>26</b> relevant lines.
-      <span class="green"><b>26</b> lines covered</span> and
+      <b>27</b> relevant lines.
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1233,13 +1233,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">        save_and_open_page</code>
           </li>
         </div>
       
@@ -1250,7 +1250,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -1261,12 +1261,23 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -2089,7 +2100,7 @@
 
             
 
-            <code class="ruby">      expect(Surgery.find_others_by_day(@surgery2.day_of_week).pluck(:title)).to eq([&quot;Knee Replacement&quot;, &quot;Spinal Fusion&quot;])</code>
+            <code class="ruby">      expect(Surgery.find_others_by_day(@surgery2).pluck(:title)).to eq([&quot;Knee Replacement&quot;])</code>
           </li>
         </div>
       
