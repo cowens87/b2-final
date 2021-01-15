@@ -3,7 +3,7 @@ class CreateSurgeries < ActiveRecord::Migration[5.2]
     create_table :surgeries do |t|
       t.string :title
       t.string :day_of_week
-      t.string :operating_room_number
+      t.integer :operating_room_number
 
       t.timestamps
     end

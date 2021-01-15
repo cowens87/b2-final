@@ -1,0 +1,8 @@
+<h1>All Surgeries</h1>
+
+<% @surgeries.each do |surgery| %>
+  <section id="surgery-info-<%=surgery.id%>">
+    <li>Title:               <%= surgery.title %></li>
+    <li>Performing Surgeons: <%= surgery.doctors.pluck(:name).to_sentence %></li><br>
+  </section>
+  <% end %>

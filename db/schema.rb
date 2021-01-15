@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_161822) do
   create_table "surgeries", force: :cascade do |t|
     t.string "title"
     t.string "day_of_week"
-    t.string "operating_room_number"
+    t.integer "operating_room_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
